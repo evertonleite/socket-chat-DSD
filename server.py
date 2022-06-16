@@ -19,7 +19,7 @@ def handle_user_connection(connection: socket.socket, address: str) -> None:
                 break
 
         except Exception as e:
-            print(f'Error to handle user connection: {e}')
+            print(f'Erro: {e}')
             remove_connection(connection)
             break
 
@@ -48,7 +48,7 @@ def server() -> None:
         socket_instance.bind(('', LISTENING_PORT))
         socket_instance.listen(4)
 
-        print('Server running!')
+        print('Servidor iniciado. Aguardando usuários...')
         
         while True:
 

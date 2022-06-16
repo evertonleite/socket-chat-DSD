@@ -26,15 +26,13 @@ def cliente() -> None:
 
         threading.Thread(target=handle_messages, args=[clienteSocket]).start()
 
-        print('Connected to chat!')
+        print('Conectado ao chat.')
 
         while True:
             msg = input()
             if msg == 'sair':
                 print('Saindo do chat.')
                 break
-            elif msg == 'private':
-                print('Private do chat.')
 
             clienteSocket.send(msg.encode())
 
